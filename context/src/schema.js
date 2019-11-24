@@ -1,18 +1,18 @@
-const graphql = require('graphql')
-const { GraphQLSchema, GraphQLObjectType, GraphQLString } = graphql
+const graphql = require("graphql");
+const { GraphQLSchema, GraphQLObjectType, GraphQLString } = graphql;
 
 const schema = new GraphQLSchema({
   query: new GraphQLObjectType({
-    name: 'RootQueryType',
+    name: "RootQueryType",
     fields: {
       hello: {
         type: GraphQLString,
         resolve() {
-          return 'world'
+          return "world";
         }
       }
     }
   })
-})
+});
 
-module.exports = schema
+module.exports = schema;
