@@ -1,9 +1,17 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const graphqlHTTP = require('express-graphql');
+const schema = require("./schema.js");
 const port = 3000;
 
 app.use(cors());
+
+app.use('/graphql', graphqlHTTP({
+  schema: schema,
+  graphiql: true
+}));
+
 
 app.get("/", (req, res) => res.send("Hello World!"));
 
