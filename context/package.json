@@ -4,6 +4,7 @@
   "description": "backend examples in various languages",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/AbdoulSy/backend-examples/issues"
   },
-  "homepage": "https://github.com/AbdoulSy/backend-examples#readme"
+  "homepage": "https://github.com/AbdoulSy/backend-examples#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "koa": "^2.11.0"
+  }
 }
