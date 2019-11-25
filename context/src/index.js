@@ -1,24 +1,11 @@
 const express = require("express");
-const app = express();
 const cors = require("cors");
-const graphqlHTTP = require("express-graphql");
-const schema = require("./schema.js");
+const application = require("./app");
+
+const app = express();
 const port = 3000;
 
 app.use(cors());
-
-app.use(
-  "/graphql",
-  graphqlHTTP({
-    schema: schema,
-    graphiql: 
-true
-  })
-);
-
-app.get("/", (req, res) => res.send("Hello World!"));
-
-app.get("/api", (req, res) => res.json({ success: true, value: 4 }));
 
 const server = app.listen(port, () =>
   console.log(`Example app listening on port ${port}!`)
@@ -42,3 +29,5 @@ Object.keys(signals).forEach(signal => {
     shutdown(signal, signals[signal]);
   });
 });
+
+application(app);
